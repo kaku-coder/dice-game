@@ -5,7 +5,7 @@ import dice from '../assets/dices.png'
 
 const Main = () => {
   return (
-    <div className='container'>
+    <div className='main-container'>
       <div className='left'>
         <img src={dice} alt="dice" />
       </div>
