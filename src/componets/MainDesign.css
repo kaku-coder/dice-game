@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(
+    135deg,
+    #1e1e2f 0%,
+    #2c2c44 100%
+  ); /* Dark mode feel */
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 60px;
+}
+
+.left img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.4));
+  animation: float 6s ease-in-out infinite;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+  align-items: flex-start;
+}
+
+.right h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+  background: linear-gradient(to right, #ffffff, #a5a5a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -2px;
+}
+
+.btn {
+  padding: 16px 48px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e1e2f;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 14px 0 rgba(255, 255, 255, 0.39);
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.23);
+  background-color: #f0f0f0;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .left,
+  .right {
+    flex: none;
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .left {
+    margin-bottom: 40px;
+    margin-top: 60px; /* Space for header if any */
+  }
+
+  .left img {
+    max-width: 300px;
+  }
+
+  .right h1 {
+    font-size: 3rem;
+  }
+}
